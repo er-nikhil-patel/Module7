@@ -1,0 +1,404 @@
+:root {
+  color: #1f2530;
+  background:
+    radial-gradient(circle at top left, rgba(248, 199, 110, 0.5), transparent 28%),
+    radial-gradient(circle at top right, rgba(87, 168, 140, 0.28), transparent 30%),
+    linear-gradient(180deg, #f6f0e3 0%, #eef2f1 42%, #edf3f7 100%);
+  font-family: "Aptos", "Segoe UI", "Trebuchet MS", sans-serif;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  display: grid;
+  gap: 22px;
+  max-width: 1360px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.panel,
+.lane {
+  border: 1px solid rgba(31, 37, 48, 0.1);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 22px 48px rgba(33, 45, 56, 0.1);
+  backdrop-filter: blur(16px);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.8fr);
+  gap: 20px;
+  padding: 28px;
+  overflow: hidden;
+}
+
+.hero-copy {
+  display: grid;
+  gap: 12px;
+}
+
+.kicker,
+.section-label,
+.stat-card span,
+.thread-pill {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.kicker,
+.section-label {
+  color: #9c5c0e;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+}
+
+h1 {
+  max-width: 760px;
+  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  line-height: 0.98;
+}
+
+.lede {
+  max-width: 720px;
+  color: #4b5967;
+  font-size: 1.05rem;
+}
+
+.hero-stats {
+  display: grid;
+  gap: 12px;
+}
+
+.stat-card {
+  display: grid;
+  gap: 8px;
+  border-radius: 18px;
+  padding: 18px;
+  background: linear-gradient(180deg, rgba(245, 239, 225, 0.92), rgba(255, 255, 255, 0.9));
+}
+
+.stat-card strong {
+  overflow-wrap: anywhere;
+  font-size: 1.1rem;
+}
+
+.workspace,
+.main-grid,
+.board-grid,
+.thread-grid,
+.contract-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.workspace,
+.main-grid {
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
+}
+
+.composer,
+.skill-panel,
+.note-stack,
+.timeline,
+.defined-list,
+.board,
+.thread-list {
+  display: grid;
+  gap: 14px;
+}
+
+.composer,
+.skill-panel,
+.main-grid > .panel,
+.board {
+  padding: 24px;
+}
+
+.section-heading {
+  display: flex;
+  gap: 12px;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.muted {
+  color: #5c6874;
+}
+
+textarea {
+  width: 100%;
+  min-height: 320px;
+  resize: vertical;
+  border: 1px solid rgba(31, 37, 48, 0.16);
+  border-radius: 18px;
+  padding: 16px;
+  color: #1f2530;
+  background: rgba(250, 248, 243, 0.9);
+}
+
+textarea:focus,
+button:focus-visible {
+  outline: 3px solid rgba(87, 168, 140, 0.55);
+  outline-offset: 2px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.primary-button,
+.ghost-button {
+  min-height: 46px;
+  border-radius: 999px;
+  padding: 0 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.primary-button {
+  border: none;
+  color: #fffdf7;
+  background: linear-gradient(135deg, #a35b16, #c48c2b);
+  box-shadow: 0 16px 28px rgba(163, 91, 22, 0.22);
+}
+
+.ghost-button {
+  border: 1px solid rgba(31, 37, 48, 0.14);
+  color: #1f2530;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.primary-button:hover,
+.ghost-button:hover {
+  transform: translateY(-1px);
+}
+
+.primary-button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+}
+
+.error {
+  border-radius: 16px;
+  padding: 12px 14px;
+  color: #8c1f12;
+  background: #fee8e2;
+}
+
+.contract-grid,
+.thread-grid,
+.board-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contract-block,
+.thread-list,
+.note-card,
+.timeline-card,
+.task-card {
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(247, 249, 251, 0.96);
+}
+
+.thread-list:last-child,
+.thread-grid .thread-list:nth-child(4) {
+  grid-column: span 3;
+}
+
+.thread-pill {
+  align-self: center;
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: #fff;
+  background: #32616a;
+}
+
+.plain-list,
+.defined-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plain-list li,
+.defined-list li {
+  display: grid;
+  gap: 4px;
+}
+
+.timeline-card {
+  border-left: 6px solid #d6a13d;
+}
+
+.timeline-top,
+.task-top {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-badge {
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.status-badge.done {
+  color: #124a36;
+  background: #d7f3e1;
+}
+
+.status-badge.warning {
+  color: #8f5407;
+  background: #ffe6b5;
+}
+
+dl {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  gap: 12px;
+}
+
+dt {
+  color: #5c6874;
+  font-weight: 700;
+}
+
+dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.defined-list li,
+.task-card {
+  border: 1px solid rgba(31, 37, 48, 0.08);
+}
+
+.defined-list li {
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(247, 249, 251, 0.96);
+}
+
+.defined-list span,
+.task-card p,
+.note-card p {
+  color: #5c6874;
+}
+
+.note-stack {
+  align-content: start;
+}
+
+.note-highlight {
+  background: linear-gradient(180deg, rgba(255, 242, 209, 0.95), rgba(255, 250, 236, 0.98));
+}
+
+.board {
+  gap: 18px;
+}
+
+.lane {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+}
+
+.lane-today {
+  background: linear-gradient(180deg, rgba(255, 238, 220, 0.92), rgba(255, 255, 255, 0.9));
+}
+
+.lane-week {
+  background: linear-gradient(180deg, rgba(225, 239, 233, 0.92), rgba(255, 255, 255, 0.9));
+}
+
+.lane-later {
+  background: linear-gradient(180deg, rgba(229, 238, 248, 0.92), rgba(255, 255, 255, 0.9));
+}
+
+@media (max-width: 1100px) {
+  .hero,
+  .workspace,
+  .main-grid,
+  .board-grid,
+  .thread-grid,
+  .contract-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .thread-list:last-child,
+  .thread-grid .thread-list:nth-child(4) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 18px;
+  }
+
+  .hero,
+  .composer,
+  .skill-panel,
+  .main-grid > .panel,
+  .board {
+    padding: 18px;
+  }
+
+  .section-heading,
+  .timeline-top,
+  .task-top {
+    display: grid;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 11vw, 3.2rem);
+  }
+}

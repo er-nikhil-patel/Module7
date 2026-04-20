@@ -1,0 +1,35 @@
+# singleAgentThread
+
+## Purpose
+
+Represent the full work history for the single Manager Agent in the `task-manager-single-agent` workflow.
+
+## Agent
+
+- `Manager Agent`
+
+## Input
+
+- Raw notes, tasks, or checklist items from the user
+- Optional deadlines, urgency, owners, dependencies, or constraints
+- Optional formatting request for the final answer
+
+## Decisions
+
+- Decide what each raw item means as a concrete to-do
+- Decide which tasks belong in `today`, `thisWeek`, or `later`
+- Decide whether any task is blocked, duplicated, or missing needed context
+- Decide the most useful `next action` for the user
+
+## Output
+
+- A clearly defined to-do list
+- A manager-style task board grouped into `today`, `thisWeek`, and `later`
+- Short reasoning for important priority choices
+- A `next action` section
+- A `risks or blockers` section when needed
+
+## Next Handoff
+
+- No specialist handoff
+- The same `Manager Agent` publishes the final answer to the user from this thread
